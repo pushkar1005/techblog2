@@ -1,0 +1,68 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+body{
+	max-width: 100%;
+	margin: 0 0 100px;
+	overflow-x: hidden;
+
+}
+
+.navbar{
+		color: white;
+}
+#third{
+	padding:0px;
+	margin-left:30px;
+}
+
+.menu_header{
+	font-size: 25px;
+
+}
+.div_menu{
+
+}
+
+.nav_items{
+	color: white;
+	font-size: 2em;
+}
+
+
+#user_color{
+	color: white;
+	font-size:25px;
+}
+#user-color:hover{
+	color:blue;
+}
+#panel{
+	display:none;
+}
+#menulist1{
+	display:none;
+}
+ul{
+	style:none;
+}
+.glyphs{
+	font-size: 15px;
+	color:white;
+	margin-left:30px;
+}
+.moderators > {
+	color:#fff;
+}
+
+.footer{
+	height: 150px;
+}
+
+
+.border{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ccccb3;
+}

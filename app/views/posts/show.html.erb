@@ -1,0 +1,99 @@
+<div class="container border" style="margin-top:-20px">
+	<div class="row">
+		<% if @post.picture? %>
+				<img src="<%=@post.picture%>"  alt="<%= @post.title %>" width="100%" height="400">
+		<% end %>
+	</div>
+
+	<div class="row" style=" height: 15px; background-color: red;">
+	</div>
+
+	<div class="row ">
+				<div class="col-md-1 col-sm-1 col-xs-1 border"></div>
+
+				<div class="col-md-10 col-sm-10 col-xs-10">
+
+							<div class="row jumbotron" style="padding:20px 0px 20px 20px;word-wrap:break-word;">
+								<center><span id="post_title"><%= @post.title.capitalize %></span></center>
+							</div>
+
+							<div class="row">
+									<div class="col-md-4 col-sm-4 col-xs-4" >
+										<span id="post_by">By:&nbsp;
+											<%= link_to @post.user.name,@post.user,style: "text-decoration:none;" %>
+										 </span>
+									</div>
+
+									<div class="col-md-4 col-sm-4 col-xs-4 " >
+										<center><span id="post_by">
+												<% if !@post.category_id.nil? %>
+														<%= link_to Category.find(@post.category_id).name,Category.find(@post.category_id),style: "text-decoration:none;"	 %>
+												<% end %>
+										</span></center>
+									</div>
+
+									<div class="col-md-4 col-sm-4 col-xs-4">
+										<center><span id="post_date"><%= @post.created_at.strftime("%b %d,%Y")%></span></center>
+									</div>
+							</div>
+
+							<div class="row " id="social_icons" style="margin-top: 10px;">
+											<!-- Facebook -->
+										<div class="col-md-2 col-sm-2 col-xs-2">
+										<!--	<font style="font-size:24px;">Share&nbsp;On&nbsp;:</font>-->
+										</div>
+										<div class="row col-md-8 col-sm-8 col-xs-8">
+											<center>
+														<%= link_to "<div class=\"btn btn-md btnss btnss-facebook\"><i class=\"fa fa-facebook\"></i> Facebook</div>".html_safe,"#" %>
+														<!-- Google+ -->
+														<%= link_to "<div class=\"btn btn-md btnss btnss-googleplus\"><i class=\"fa fa-google-plus\"></i> Google+</div>".html_safe,"#" %>
+														<!-- Twitter -->
+														<%= link_to "<div class=\"btn btn-md  btnss btnss-twitter\"><i class=\"fa fa-twitter\"></i> Twitter</div>".html_safe,"#" %>
+														<!-- LinkedIn -->
+														<%= link_to "<div class=\"btn btnss btnss-linkedin\"><i class=\"fa fa-linkedin\"></i> Linkedin</div>".html_safe,"#" %>
+											</center>
+										</div>
+										<div class="col-md-2 col-sm-2 col-xs-2">
+										</div>
+
+							</div>
+							<center><div style="background-color:black;width:75%;height:2px;"></div></center>
+							<br>
+
+							<div class="container border BigblogPostDiv">
+										<div style="width:100%; height:100%"><%= @post.content.html_safe %></div>
+							</div>
+			</div>
+
+			<div class="col-md-1 col-sm-1 col-xs-1"></div>
+	</div>
+
+	<div class=" row">
+		<br>
+		<br>
+		<br>
+		<br>
+</div>
+</div>
+<!--
+<%= request.original_url%>
+<div  class="btn btnss btnss-facebook">
+<div class="fb-share-button" data-href="http://tinymce-bootstrap-plugin.creation-site.org/" data-layout="link"></div>
+</div>
+
+-->
+
+<div class="container" style="margin-top:20px">
+	<center>
+		<% if logged_in? %>
+			<% if (@post.user == current_user) || current_user.admin?%>
+				<%= link_to "<div class=\"btn btn-primary btn-lg\">Edit Post</div>".html_safe,edit_post_path(@post),target: "_blank" %>
+			<% end %>
+			<% if current_user.admin? %>
+				<!--	<%= link_to "Delete Post",@post,method: :delete, data: { confirm: "Are You Sure"} %> -->
+				<%= link_to "<div class=\"btn btn-primary btn-lg\">Delete Post</div>".html_safe,@post,method: :delete, data: { confirm: "Are You Sure"} %>
+			<% end %>
+		<% end %>
+	</center>
+
+</div>

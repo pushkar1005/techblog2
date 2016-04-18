@@ -1,0 +1,104 @@
+<% if @posts.size >=1 %>
+	<div class="container">
+		<% if @page.nil? || @page=="1"%>
+			<h1><%= "Latest" %></h1>
+		<% end %>
+		<% if @page.nil? || @page=="1"%>
+
+					<div class="row big_post_row_box">
+									<div class=" col-md-6 col-sm-6 big_post_box">
+										<%=mediumPost(@posts[0]).html_safe%>
+									</div>
+
+
+
+							<div class=" col-md-6 col-sm-6 big_post_box ">
+
+													<div class="row small_post_row_box " style="margin-bottom: 10px;">
+
+																		<div class="col-md-6 col-sm-6  small_post">
+																			<%if @posts.size >= 2 %>
+																				<%=smallPost(@posts[1]).html_safe%>
+																			<% end %>
+																		</div>
+																		<div class="col-md-6 col-sm-6   small_post">
+																			<%if @posts.size >= 3 %>
+																				<%=smallPost(@posts[2]).html_safe%>
+																			<% end %>
+																		</div>
+
+													</div>
+
+													<div class="row small_post_row_box">
+
+																	<div class="col-md-6 col-sm-6 small_post ">
+																		<%if @posts.size >= 4 %>
+																			<%=smallPost(@posts[3]).html_safe%>
+																		<% end %>
+																	</div>
+																	<div class="col-md-6 col-sm-6  small_post">
+																		<%if @posts.size >= 5 %>
+																			<%=smallPost(@posts[4]).html_safe%>
+																		<% end %>
+																	</div>
+
+													</div>
+
+							</div>
+					</div>
+
+					<% if @posts.size >=6 %>
+								<div class="">
+											<% postsLeft = (@posts.size-5) %>
+												<% prev_i=0 %>
+												<% for i in 0...(postsLeft)%>
+													<% if (i%4) == 0 %>
+														<div class="row  small_post_row_box" style="margin-bottom: 20px;">
+														<% prev_i = i%>
+													<% end %>
+														<div class="col-md-3  col-sm-3  small_post">
+															<%=smallPost(@posts[i+5]).html_safe%>
+														</div>
+													<% if prev_i+3 == i %>
+														</div>
+													<% end %>
+												<% end %>
+								</div>
+					<% end %>
+
+		<% else %>
+							<div class="container-fluid">
+								<% postsLeft = @posts.size %>
+									<% total=0 %>
+								<% for i in 0...(postsLeft)%>
+									<% if !(@posts[i].nil?)%>
+
+													<% if (i%4) == 0 %>
+														<div class="row small_post_row_box" style="margin-bottom: 20px;">
+													<% end %>
+
+													<div class="col-md-3  col-sm-3  small_post">
+														<%=smallPost(@posts[i]).html_safe%>
+														<%total = total+1%>
+													</div>
+													<% if total==4 %>
+														</div>
+														<% total = 0 %>
+													<%end%>
+
+													<% if @posts[i+1].nil? && total!=0 %>
+														</div>
+													<% end %>
+
+									<% else %>
+										<% break %>
+									<% end %>
+								<% end %>
+							</div>
+		<% end %>
+
+</div>
+	<div>
+			<center><%= will_paginate @posts,renderer: BootstrapPagination::Rails %></center>
+	</div>
+<% end %>

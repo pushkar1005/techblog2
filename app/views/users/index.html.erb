@@ -1,0 +1,44 @@
+<div class="container" style="min-height:200px;">
+	<% total = 0 %>
+	<% for i in 0...(@users.size) %>
+				<% if !@users[i].nil?%>
+						<% if i%3 == 0 %>
+							<div class="row">
+						<% end %>
+						<div class="col-md-4 col-sm-4	" style="border-width:2px;border-color:#eeeeee">
+							<%= link_to aboutUser(@users[i]).html_safe,user_path(@users[i]),style: "text-decoration:none" %>
+						</div>
+						<% total = total+1%>
+						<% if total==3%>
+								</div>
+								<% total = 0 %>
+						<% end %>
+						<% if @users[i+1].nil?&&total!=0 %>
+								</div>
+						<% end %>
+				<% else %>
+					<% break %>
+				<% end %>
+	<% end %>
+	</div>
+</div>
+
+<div>
+	<center><%= will_paginate @users,renderer: BootstrapPagination::Rails %></center>
+</div>
+
+
+
+
+
+
+
+<!--
+
+
+<% @users.each do |user| %>
+	<div class="container-fluid" id="blogpost">
+		<h3> <%= link_to user.name, user %>  </h3>
+	</div>
+
+<% end %>-->

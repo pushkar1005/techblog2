@@ -1,0 +1,30 @@
+$(document).ready(function(){
+	$("hello").click(function(){
+		$("#panel").slideDown();
+	})
+});
+$(document).ready(function(){
+	$("#menu1").click(function(){
+		$("#menulist1").slideDown();
+	})
+});
+$(document).ready(function(){
+	$(".hello").click(function(){
+		$("#panel").slideDown();
+	})
+});
+$(document).ready(function(){
+	$(".hello").click(function(){
+		$("#panel").slideDown();
+	})
+});
+$(document).ready(function(){
+	$(".hello").click(function(){
+		$("#panel").slideDown();
+	})
+});
+$(document).ready(function(){
+	$(".hello").click(function(){
+		$("#panel").slideDown();
+	})
+});

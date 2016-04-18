@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <h1><center><span class="label label-default">NEW POST</span></center></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@post,html: { class: "form"}) do |f| %>
+      <h1><span class="label label-default">Title</span></h1>
+      <div class="form-group">
+          <%= f.text_field :title, class: "form-control input-lg", placeholder: "Title" %>
+      </div>
+
+      <h1><span class="label label-default">Image</span></h1>
+      <div class="form-group">
+          <%= f.text_field :picture, class: "form-control input-lg", placeholder: "Image Url" %>
+      </div>
+
+
+      <h1><span class="label label-default">Category</span></h1>
+      <select class="selectpicker form-group" data-live-search="true" name="post[category_id]"  data-no-turbolink="true">
+        <% i = 0%>
+        <% Category.all.each do |category| %>
+          <% i=i+1 %>
+          <option value="<%= i %>" ><%= category.name %></option>
+        <% end %>
+      </select>
+
+      <!--
+      <%= f.collection_select :category_id, Category.order(:name),:id,:name, {include_blank: false},
+      {class: "selectpicker form-group"} %>
+     <!-- <%= f.text_field :category_id %> -->
+
+
+      <h1>
+        <span class="label label-default">
+          Content
+        </span>
+        <a href="http://tinymce-bootstrap-plugin.creation-site.org" style="text-decoration:none" target="_blank">
+          <span class="label label-default" style="margin-left: 236px">
+            Editor
+          </span>
+        </a>
+      </h1>
+      <div class="form-group">
+        <%= f.text_area :content,class: "form-control",rows: "20",cols: "100" %>
+      </div>
+      <%= f.submit "Create new Post", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

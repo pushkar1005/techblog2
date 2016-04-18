@@ -1,0 +1,252 @@
+<div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 navbar navbar-inverse hero" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+            <a href="<%=root_path%>" class="navbar-brand">LOGO</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Home alts <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+              <li><a href="index.html">Home 1 (Current)</a></li>
+              <li><a href="index2.html">Home 2 (Slider)</a></li>
+              <li><a href="index3.html">Home 3 (Off-canvas menu)</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Showcase <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+              <li><a href="features.html">Features</a></li>
+              <li><a href="services.html">Services</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Pricing <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+              <li><a href="pricing.html">Pricing charts</a></li>
+              <li><a href="charts.html">Comparison tables</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    More pages <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+              <li><a href="aboutus.html">About us</a></li>
+              <li><a href="contactus.html">Contact us</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="portfolio-item.html">Portfolio Item</a></li>
+              <li><a href="invoice.html">Invoice page</a></li>
+              <li><a href="timeline.html">Timeline Page</a></li>
+              <li><a href="docs.html">API Documentation</a></li>
+              <li><a href="support.html">Support</a></li>
+              <li><a href="coming-soon.html">Coming Soon</a></li>
+              <li><a href="status.html">Status</a></li>
+              <li><a href="signup.html">Sign Up & Sign In</a></li>
+              <li><a href="signup-rotate.html">Sign Up Miscellaneous</a></li>
+              <li><a href="404.html">404 Page</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Blog <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="blogpost.html">Blog Post</a></li>
+                </ul>
+              </li>
+
+
+
+              <li class="dropdown">
+                <% if logged_in? %>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <%= current_user.name.titleize %><b class="caret"></b>
+                  </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <%= link_to "Profile",current_user %>
+                  </li>
+                  <li><%= link_to "Log out",logout_path,method: :delete, data: {confirm: "Are You Sure"} %></li>
+                </ul>
+                <% else %>
+                  <div class="glyphs">
+                      <span class="fa fa-facebook" style="margin:17px"></span>
+                      <span class="fa fa-google" style="margin:17px"></span>
+                      <span class="fa fa-twitter" style="margin:17px"></span>
+                      <span class="fa fa-linkedin" style="margin:17px"></span>
+                  </div>
+                <% end %>
+              </li>
+
+
+            </ul>
+        </nav>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+<nav class="navbar navbar-inverse" id="navigation" >
+  <div class="row">
+    <div class="col-md-1" style="background-color:red;font-size: 30px;">
+    LOGO
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-md-8">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-md-3" >
+      <div  id="third">
+        <ul class="nav navbar-nav">
+          <% if logged_in? %>
+            <li>
+                <div class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-user"></span>
+                        <%= link_to "Profile",current_user %>
+                </div>
+          <% if current_user.admin? %>
+              <div class="btn btn-info btn-lg">
+                <%= link_to "Create New User",signup_path %>
+              </div>
+          <% end %>
+              <div class="btn btn-info btn-lg" >
+                <%= link_to "logout",logout_path,method: :delete, data: {confirm: "Are You Sure"} %>
+              </div>
+            </li>
+          <% else %>
+                <li id="user_color">
+                  <%= link_to "","#",class: "fa fa-twitter" %>
+                </li>
+                <li id="user_color">
+                  <%= link_to "","#",class: "fa fa-facebook" %>
+                </li>
+                <li id="user_color">
+                  <%= link_to "","#",class: "fa fa-google" %>
+                </li>
+                <li id="user_color">
+                  <%= link_to "","#",class: "fa fa-pinterest" %>
+                </li>
+                <li id="user_color">
+                  <%= link_to "","#",class: "fa fa-instagram" %>
+                </li>
+          <% end %>
+        </ul>
+      <div>
+    </div>
+  </div>
+</nav>
+-->

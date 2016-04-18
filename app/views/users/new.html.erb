@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <h1><center><span class="label label-default">CREATE NEW USER</span></center></h1>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+	<%= form_for(@user,html: { class: "form"}) do |f| %>
+		<h1><span class="label label-default">Name</span></h1>
+		<div class="form-group">
+          <%= f.text_field :name, class: "form-control input-lg", placeholder: "Name" %>
+        </div>
+
+        <h1><span class="label label-default">Image</span></h1>
+		<div class="form-group">
+          <%= f.text_field :name, class: "form-control input-lg", placeholder: "Image Url" %>
+        </div>
+
+
+		<h1><span class="label label-default">Email</span></h1>
+		<div class="form-group">
+              <%= f.email_field :email, class: "form-control input-lg", placeholder: "EMail" %>
+         </div>
+
+		<h1><span class="label label-default">Password</span></h1>
+		<div class="form-group">
+              <%= f.password_field :password, class: "form-control input-lg", placeholder: "Password" %>
+        </div>
+
+		<h1><span class="label label-default">Password Confirmation</span></h1>
+		<div class="form-group">
+              <%= f.password_field :password_confirmation, class: "form-control input-lg", placeholder: "Password" %>
+        </div>
+
+
+		<%= f.submit "Create New User", class: "btn btn-primary" %>
+	<% end %>
+</div>
+</div>

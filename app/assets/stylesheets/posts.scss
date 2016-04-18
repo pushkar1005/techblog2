@@ -1,0 +1,188 @@
+
+.title{
+
+	word-wrap: break-word;
+	text-align: center;
+
+}
+
+#post_content{
+	padding: 10px;
+}
+
+.post{
+    height: 100%;
+    width: 100%;
+}
+.post > .strip{
+    height: 10px;
+    background-color:red;
+    width:100%;
+}
+.big_post_row_box{
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+    min-height: 450px;
+}
+
+.big_post_box{
+    min-height: 450px;
+}
+.small_post_row_box{
+    min-height:220px;
+}
+.small_post{
+    min-height:220px;
+}
+#post_title{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 30px;
+}
+#post_by{
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+}
+#post_date{
+	padding-top: 20px;
+	font-size: 20px;
+	font-family: 'Open Sans', sans-serif;
+}
+#social_icons{
+	margin-bottom:20px;
+
+}
+
+.btnss{
+	margin-left: 10px;
+}
+.btnss-twitter {
+    background: #00acee;
+    border-radius: 0;
+    color: #fff
+}
+.btnss-twitter:link, .btnss-twitter:visited {
+    color: #fff
+}
+.btnss-twitter:active, .btnss-twitter:hover {
+    background: #0087bd;
+    color: #fff
+}
+.btnss-facebook {
+    background: #3b5998;
+    border-radius: 0;
+    color: #fff
+}
+.btnss-facebook:link, .btnss-facebook:visited {
+    color: #fff
+}
+.btnss-facebook:active, .btnss-facebook:hover {
+    background: #30477a;
+    color: #fff
+}
+.btnss-googleplus {
+    background: #e93f2e;
+    border-radius: 0;
+    color: #fff
+}
+.btnss-googleplus:link, .btnss-googleplus:visited {
+    color: #fff
+}
+.btnss-googleplus:active, .btnss-googleplus:hover {
+    background: #ba3225;
+    color: #fff
+}
+.btnss-stumbleupon {
+    background: #f74425;
+    border-radius: 0;
+    color: #fff
+}
+.btnss-stumbleupon:link, .btnss-stumbleupon:visited {
+    color: #fff
+}
+.btnss-stumbleupon:active, .btnss-stumbleupon:hover {
+    background: #c7371e;
+    color: #fff
+}
+.btnss-linkedin {
+    background: #0e76a8;
+    border-radius: 0;
+    color: #fff
+}
+.btnss-linkedin:link, .btnss-linkedin:visited {
+    color: #fff
+}
+.btnss-linkedin:active, .btnss-linkedin:hover {
+    background: #0b6087;
+    color: #fff
+}
+
+.BigblogPostDiv{
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	line-height: 27px;
+
+}
+
+.bigPost > a > .strip{
+	background-color: red;
+	height: 15px;
+}
+
+.bigPost > a > .title{
+
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 30px;
+	line-height: 32px;
+	min-height: 145px;
+	font-weight: bolder;
+
+}
+.bigPost > .socialPlugins
+{
+	min-height: 48px;
+	background-color: #eeeeee;
+	word-wrap: break-word;
+}
+.mediumPostSocial{
+	margin-left: 8px;
+}
+
+.smallPost > a > .strip{
+	background-color: red;
+	height: 7px;
+}
+
+.smallPost > a > .title{
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 16px;
+	min-height: 70px;
+	font-weight: bold;
+}
+
+.smallPost > .socialPlugins{
+	background-color: #eeeeee;
+	word-wrap: break-word;
+	min-height: 40px;
+}
+
+.smallPostSocial{
+	margin-left: 3px;
+}
+
+.bigPost{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #a6a6a6;
+}
+
+.smallPost{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #a6a6a6;
+}
+
+.title{
+	color:#504949;
+}

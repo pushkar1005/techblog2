@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TechBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= render "layouts/cdn_head" %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body id="home">
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+<div class="container-fluid	" style="background-color:white">
+	<div class="row">
+	 	<%= render "layouts/navigation" %>
+	</div>
+	<div class = "row" style="margin-top:20px; min-height: 700px;" >
+		<%= yield %>
+	</div>
+</div>
+    <div>
+      <%= render "layouts/cdn_foot" %>
+    </div>
+</body>
+</html>

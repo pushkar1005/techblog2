@@ -1,0 +1,6 @@
+<ul class="list-group">
+<li class="list-group-item"><%= link_to "All Categories",root_path%></li>
+<% Category.all.each do |category|  %>
+	<li class="list-group-item"><%= link_to category.name,category%></li>
+<% end %>
+</ul>
